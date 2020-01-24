@@ -38,10 +38,33 @@ body{
     place-items: center;
 }
 
+.neulogin {
+  padding: 2em;
+  text-align: center;
+  width: 40%;
+  display: flexbox;
+  align-content: center;
+  margin-left: 30%;
+  margin-top: 15%;
+}
+
+input[type=text], input[type=password]{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  box-shadow: 
+    6px 6px 12px 3px rgba(90,90,90,0.3),
+    -4px -4px 12px 6px rgba(255,255,255,0.3);
+}
+
 .neubutton {
-    margin-top: 2em;
-    margin-bottom: 2em;
-    margin-left: 2em;
+    margin-top: 3em;
+    margin-bottom: 3em;
+    margin-left: 3em;
     height: 45px;
     width: 150px;
     border-radius: 75px;
@@ -58,7 +81,10 @@ body{
       6px 6px 12px 3px rgba(90,90,90,0.3),
       -4px -4px 12px 6px rgba(255,255,255,0.3);
     transition: all .3s ease;
+    text-emphasis: none;
+    text-decoration: none;
   }
+
   .neubutton:hover {
     text-decoration: none;
     letter-spacing: 3px;

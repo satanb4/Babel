@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="neuu neulogin ">
+        <h2>Login</h2> <br>
+        <form action="{{url_for('login')}}" method="post">
+        
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+              <br>
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+                <br>
+              <button class="neuu neuubutton" type="submit">Login</button>
+              <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+              </label>
+            </div>
+          
+            <div class="container" >
+              <a class="neuu neuubutton" href="{{url_for('home')}}">Cancel</a>
+              <span class="psw">Forgot <a href="#">password?</a></span>
+            </div>
+          </form>
+    </div>
+</div>
+
+{% endblock %}
