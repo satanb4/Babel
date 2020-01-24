@@ -1,13 +1,54 @@
 {% extends 'base.html' %}
 {% block body %}
-<div class="jumbotron">
-    <div class="container">
-    <h1 class="display-3">Babel</h1>
-    <p class="lead">Welcome to the Ribbon Babel Application</p>
-    <hr class="my-4">
-    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugit consequatur inventore fugiat, quasi ipsam non impedit hic autem ipsa amet, veniam beatae voluptas cupiditate illo perspiciatis, odit eos? Saepe, similique.</p>
-    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+
+<div class="area" >
+  <img src="{{url_for('static',filename='images/BabelLogo.png')}}" alt="BabelLogo" height="350" width="350" style="margin: 10em 50em; padding-bottom: 2px;">
+  <a class="neubutton" id='trigger' style="margin-left: 52em; width: 300px; padding: 3em;"><h3>enter</h3></a>
+</div>
+
+
+<div class="page-content">
+  <div class="container">
+    <div class="neuu neublock">
+      <h1 class="display-3" style="text-align: center;">Ribbon Babel</h1>
+      <div class="container">
+        <div class="row">
+          {% for button,link in menuButtons %}
+          <div class="col-sm"><a class="neubutton" href={{link}}>{{button}}</a></div>
+          {% endfor %}
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col"><div class="neuu neucard">
+        <h5>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corrupti distinctio id laborum recusandae unde minima perspiciatis excepturi eos, esse voluptate saepe beatae nostrum, animi reprehenderit officia at illum, quos velit.</h5>
+      </div></div>
+      <div class="col"><div class="neuu neucard">
+        <h5>Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo possimus quae modi facere, numquam alias at voluptas. Ut magni excepturi voluptate adipisci similique quia, animi doloribus illo amet nostrum iure?</h5>
+      </div></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="neuu neulink">
+        <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a href="#"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
+    </div>
   </div>
 </div>
-</div>
+{% endblock %}
+
+{% block script %}
+<script>
+      $(document).ready(function () {
+          $(".page-content").hide();
+          $('#trigger').on('click',function () {
+              $(".area").slideUp(500);
+              $(".page-content").show();
+      });
+  });
+  </script>
 {% endblock %}

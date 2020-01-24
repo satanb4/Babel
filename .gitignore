@@ -1,3 +1,23 @@
+Skip to content
+Search or jump to…
+
+Pull requests
+Issues
+Marketplace
+Explore
+ 
+@satanb4 
+satanb4
+/
+Babel
+1
+00
+ Code Issues 0 Pull requests 0 Actions Projects 0 Wiki Security Insights Settings
+Babel/.gitignore
+@satanb4 satanb4 Create .gitignore
+e657950 16 hours ago
+129 lines (105 sloc)  1.76 KB
+  
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -127,3 +147,17 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+© 2020 GitHub, Inc.
+Terms
+Privacy
+Security
+Status
+Help
+Contact GitHub
+Pricing
+API
+Training
+Blog
+About
+App/deepspeech-0.6.1-models/
+*.xcf
