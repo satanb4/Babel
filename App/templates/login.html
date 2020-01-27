@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="neuu neulogin ">
+        <h2>Login</h2> <br>
+        <div class="alert alert-warning" role="alert" id="alerted" style="display: {{display}};">
+            The Login data does not appear in our database
+          </div>
+        <form action="{{url_for('login')}}" method="post">
+        
+            <div class="container">
+              <label for="uname"><b>Username</b></label>
+              <input type="text" placeholder="Enter Username" name="uname" required>
+              <br>
+
+              <label for="psw"><b>Password</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required>
+
+              <label>
+                <button class='neuu neubutton' type="submit" name="submit"  value="login">Login </button>
+                </label>
+              
+                <label>
+                <a class='neuu neubutton' href='{{url_for('signUp')}}' type="submit" name="submit"  value="registration">Registration </a>
+                </label>
+          
+            <label>
+              <a class="neuu neubutton" href="{{url_for('home')}}">Cancel</a>
+            </label>
+          </form>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $('#alerted').delay(5).hide();
+        $('')
+    })
+    </script>
+{% endblock %}

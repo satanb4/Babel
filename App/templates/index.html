@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block body %}
+
+<div class="area" >
+  <img src="{{url_for('static',filename='images/BabelLogo.png')}}" alt="BabelLogo" height="350" width="350" style="margin: 10em 50em; padding-bottom: 2px;">
+  <a class="neubutton" id='trigger' style="margin-left: 52em; width: 300px; padding: 3em;"><h3>enter</h3></a>
+</div>
+
+
+<div class="page-content">
+  <div class="container">
+    <img src="{{url_for('static',filename='images/rbbn.png')}}" alt="RibbonComm" height='80' width='190' style="margin-left: 28em; margin-top: 2em;">
+    <div class="neuu neublock">
+        <!-- <h1 class="display-3" style="text-align: center; letter-spacing: 10px;">Ribbon Babel</h1> -->
+      <div class="container">
+        <div class="row" style="padding-left: 20%;">
+          {% for button,link in menuButtons %}
+          <div class="col-md-lg"><a class="neubutton" href={{link}}>{{button}}</a></div>
+          {% endfor %}
+        </div>
+        </div>
+      </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col"><div class="neuu neucard">
+        <h5>Ribbon Babel is a novel innovation in the space of Lawful Interception, providing a comprehensive toolkit for the user to run analysis as well as allowing for secure session from the various issues that plague network security</h5>
+      </div></div>
+      <div class="col"><div class="neuu neucard">
+        <img src="{{url_for('static',filename='images/rbbn_white.png')}}" alt="Ribbon" height='150' width='170' style="margin-left: 5.5em;">
+      </div></div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="neuu neulink">
+        <a target="_blank" href="https://www.linkedin.com/company/ribbon-communications"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://instagram.com/ribboncomm?igshid=1fguq0qhd4q0k"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://facebook.com/ribboncomm"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+        <a target="_blank" href="https://twitter.com/ribboncomm"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block script %}
+<script>
+      $(document).ready(function () {
+          $(".page-content").hide();
+          $('#trigger').on('click',function () {
+              $(".area").slideUp(500);
+              $(".page-content").show();
+      });
+  });
+  </script>
+{% endblock %}

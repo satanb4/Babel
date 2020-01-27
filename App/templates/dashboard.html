@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block body %}
+<div class="container">
+    <div class="neuu neublock">
+        <h1 class="text-center">Dashboard</h1>
+        <div class="row" style="padding-left: 30%;">
+            {% for button,link in menuButtons %}
+            <div class="col-md-lg"><a class="neubutton" href={{link}}>{{button}}</a></div>
+            {% endfor %}
+          </div>
+    </div>
+</div>
+
+<form action="{{url_for('upload_file')}}" method="post" enctype="multipart/form-data">
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Upload File</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <div class="input-group">
+                    <input style="margin-left: 25%;" type='file' name='file'>
+                </div>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <input type=submit value=Submit class="btn btn-primary">
+            </div>
+        </div>
+        </div>
+    </div>
+</form>
+
+<div class="container">
+    <div class="neuu neublock">
+            <div class="container" style="padding-bottom: 2em;">
+                <!-- Button trigger modal -->
+                <a type="button" class="neuu neubutton" data-toggle="modal" data-target="#exampleModal" style="margin-left: 27em;">Upload</a>
+                <div class="container" style="padding-left: 22em;">
+                    <audio controls>
+                        <source src="{{url_for('static',filename='sound/temp.wav')}}" type="audio/wav">
+                    </audio>
+                </div>
+                
+                <div class="neuu neublock" style='padding: 2em;'>
+                    {% if data %}
+                    <p class='text-justify'> <b>Recognised</b>  : {{data.recognised}}</p>
+                    <p class='text-justify'> <b>Translated</b>  : {{data.translated}}</p>
+                    {% endif %}
+                </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
