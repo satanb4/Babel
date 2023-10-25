@@ -5,5 +5,5 @@ itsdangerous==1.1.0
 Jinja2==2.11.3
 MarkupSafe==1.1.1
 numpy==1.22.0
-Werkzeug==2.2.3
+Werkzeug==3.0.1
 apertium==0.2.3
